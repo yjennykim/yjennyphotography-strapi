@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "grads",
+  "info": {
+    "singularName": "grad",
+    "pluralName": "grads",
+    "displayName": "grad"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

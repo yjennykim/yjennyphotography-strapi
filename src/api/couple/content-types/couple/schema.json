@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "couples",
+  "info": {
+    "singularName": "couple",
+    "pluralName": "couples",
+    "displayName": "couples"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

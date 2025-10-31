@@ -1,37 +1,28 @@
-{
+}{
   "kind": "collectionType",
   "collectionName": "families",
   "info": {
     "singularName": "family",
     "pluralName": "families",
-    "displayName": "family"
+    "displayName": "Family Photo",
+    "description": "Individual family photos"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
     "date": {
       "type": "date"
     },
-    "description": {
-      "type": "text"
+    "alternativeText": {
+      "type": "string"
     },
-    "featured": {
-      "type": "boolean"
-    },
-    "images": {
+    "image": {
       "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     }
   }
 }

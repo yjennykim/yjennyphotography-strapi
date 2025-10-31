@@ -1,4 +1,4 @@
-}{
+{
   "kind": "collectionType",
   "collectionName": "families",
   "info": {
@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "date": {
-      "type": "date"
-    },
     "alternativeText": {
       "type": "string"
     },
@@ -22,7 +19,9 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

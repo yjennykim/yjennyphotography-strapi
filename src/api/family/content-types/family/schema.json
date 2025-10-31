@@ -12,12 +12,9 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "alternativeText": {
-      "type": "string"
-    },
     "image": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "allowedTypes": [
         "images"

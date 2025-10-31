@@ -11,18 +11,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "date": {
-      "type": "date"
-    },
-    "description": {
-      "type": "text"
-    },
-    "featured": {
-      "type": "boolean"
-    },
     "images": {
       "type": "media",
       "multiple": true,

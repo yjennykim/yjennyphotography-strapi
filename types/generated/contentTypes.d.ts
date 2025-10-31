@@ -476,9 +476,6 @@ export interface ApiCoupleCouple extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    date: Schema.Attribute.Date;
-    description: Schema.Attribute.Text;
-    featured: Schema.Attribute.Boolean;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -490,7 +487,6 @@ export interface ApiCoupleCouple extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -509,15 +505,42 @@ export interface ApiFamilyFamily extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    alternativeText: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images'>;
+    image: Schema.Attribute.Media<'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::family.family'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
+  collectionName: 'galleries';
+  info: {
+    description: 'Dummy content type to register gallery API';
+    displayName: 'Gallery';
+    pluralName: 'galleries';
+    singularName: 'gallery';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::gallery.gallery'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -541,9 +564,6 @@ export interface ApiGradGrad extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    date: Schema.Attribute.Date;
-    description: Schema.Attribute.Text;
-    featured: Schema.Attribute.Boolean;
     images: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -552,7 +572,6 @@ export interface ApiGradGrad extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::grad.grad'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1072,6 +1091,7 @@ declare module '@strapi/strapi' {
       'api::blog-entry.blog-entry': ApiBlogEntryBlogEntry;
       'api::couple.couple': ApiCoupleCouple;
       'api::family.family': ApiFamilyFamily;
+      'api::gallery.gallery': ApiGalleryGallery;
       'api::grad.grad': ApiGradGrad;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
